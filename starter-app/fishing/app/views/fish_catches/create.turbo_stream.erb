@@ -1,0 +1,7 @@
+<%= render_update_stats_stream(@fish_catches) %>
+
+<%= turbo_stream.prepend "catches", @fish_catch %>
+
+<%= turbo_stream.update "new_catch" do %>
+  <%= render "form", fish_catch: @new_catch %>
+<% end %>
